@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+
+  <head>
+    <title>Diabetes</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+      html, body {
+      min-height: 100%;
+      }
+      body, div, form,select, p {
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 16px;
+      color: #eee;
+      }
+
+      body {
+      background: url('/static/doctor.jpg') no-repeat;
+      background-size: cover;
+      }
+      h1, h2 {
+      text-transform: uppercase;
+      font-weight: 400;
+        color: black;
+      }
+      h2 {
+      margin: 0 0 0 8px;
+      }
+      .main-block {
+      display: block;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 25px;
+      background: rgba(0, 0, 0, 0.5);
+
+      }
+      .left-part, form {
+        padding: 25px;
+        width: 30%;
+        margin-left: 30%;
+      }
+      .left-part {
+      text-align: center;
+      }
+      .fa-graduation-cap {
+      font-size: 72px;
+      }
+      form {
+      background: ghostwhite;
+        margin-bottom: 10px;
+      }
+      .title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      }
+      .info {
+      display: flex;
+      flex-direction: column;
+      }
+      input, select {
+      padding: 5px;
+      margin-bottom: 30px;
+      background: transparent;
+      border: 0.001em solid #0cb7c9;
+
+
+      }
+      input[type="text"]:focus:hover{
+        outline: none;
+        box-shadow: 0px 0px 5px #61C5FA;
+        border:1px solid #5AB0DB;
+        border-radius:0;
+
+      }
+      input::placeholder {
+      color: black
+      }
+      option:focus {
+      border: none;
+      }
+      option {
+      background: black;
+      border: none;
+      }
+      .checkbox input {
+      margin: 0 10px 0 0;
+      vertical-align: middle;
+      }
+      .checkbox a {
+      color: black
+      }
+      .checkbox a:hover {
+      color: #85d6de;
+      }
+      .btn-item, button {
+      padding: 10px 5px;
+      margin-top: 20px;
+      border-radius: 5px;
+      border: none;
+      background: #26a9e0;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 400;
+      color: #fff;
+      }
+      .btn-item {
+      display: inline-block;
+      margin: 20px 5px 0;
+      }
+      button {
+      width: 100%;
+      }
+      button:hover, .btn-item:hover {
+      background: #85d6de;
+      }
+      @media (min-width: 568px) {
+      html, body {
+      height: 100%;
+      }
+      .main-block {
+      flex-direction: row;
+      height: calc(100% - 50px);
+      }
+      .left-part, form {
+      flex: 1;
+      height: auto;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-block">
+      <div class="left-part">
+        <i class="fas fa-graduation-cap"></i>
+        <h1>DIABETES</h1>
+        <p>Enfermedad crónica e irreversible del metabolismo en la que se produce un exceso de glucosa o azúcar en la sangre y en la orina; es debida a una disminución de la secreción de la hormona insulina o a una deficiencia de su acción.</p>
+</p>
+        <div class="btn-group">
+
+          <a class="btn-item" href="https://www.w3docs.com/quiz/#"> Github </a>
+        </div>
+      </div>
+      <form action="" method="post">
+        {% csrf_token %}
+        <div class="title">
+          <i style="color: black" class="fas fa-pencil-alt"></i>
+          <h2>Ingrese sus datos</h2>
+        </div>
+        <div class="info">
+          <input class="fname" type="text" name="nombre" placeholder="Nombre Completo">
+          <input type="text" name="genero" placeholder="Genero">
+          <input type="text" name="edad" placeholder="Edad">
+          <input type="text" name="embarazo" placeholder="Cuantas veces estuviste embazarada?">
+          <input type="text" name="insulina" placeholder="¿Cual es tu nivel de insulina?">
+          <input type="text" name="masa" placeholder="¿Cual es tu indice de masa corporal?">
+          <input type="text" name="pedigri" placeholder="¿Nivel de pedigrí?">
+          <input type="text" name="glucosa" placeholder="Nivel de glucosa en la sangre">
+          <input type="text" name="presion" placeholder="Presion Arterial">
+        </div>
+
+        <button type="submit" href="/">Consultar</button>
+      </form>
+    </div>
+  </body>
+</html>
